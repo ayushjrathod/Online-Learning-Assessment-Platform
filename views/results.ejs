@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <!-- Add your stylesheets or additional styles here -->
+</head>
+<body>
+  <h1>Results</h1>
+  <p>Hello <%= user.username %>,</p>
+  <p>You answered <%= correctAnswers.length %> questions correctly:</p>
+  <ul>
+    <% correctAnswers.forEach((question, index) => { %>
+      <li><%= index + 1 %>. <%= question.text %></li>
+    <% }); %>
+  </ul>
+  <!-- Add more content or formatting as needed -->
+</body>
+</html>

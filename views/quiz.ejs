@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Learning Platform - Quiz Questions</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .question {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="/quiz">
+    <h1>Quiz Questions</h1>
+    <div class="quiz-container">
+      <% for (let i = 0; i < questions.length; i++) { %>
+        <div class="question">
+          <p><strong>Question <%= i + 1 %>:</strong> <%= questions[i].text %></p>
+          <ul class="options">
+            <% for (let j = 0; j < questions[i].options.length; j++) { %>
+              <li class="option">
+                <input type="radio" name="q<%= i + 1 %>" id="q<%= i + 1 %>o<%= j + 1 %>" value="<%= questions[i].options[j] %>">
+                <label for="q<%= i + 1 %>o<%= j + 1 %>"><%= questions[i].options[j] %></label>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
+      <button type="submit" class="submit-btn">Submit Answers</button>
+    </div>
+  </form>
+</body>
+</html>

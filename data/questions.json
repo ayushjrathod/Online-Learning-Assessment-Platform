@@ -1,0 +1,13 @@
+[
+    {
+      "text": "What is the capital of France?",
+      "options": ["Paris", "Berlin", "London"],
+      "correctOption": "Paris"
+    },
+    {
+      "text": "Which programming language is known for its asynchronous nature?",
+      "options": ["JavaScript", "Lava", "C++"],
+      "correctOption": "JavaScript"
+    }
+  ]
+  
